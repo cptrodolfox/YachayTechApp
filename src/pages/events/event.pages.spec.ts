@@ -1,4 +1,4 @@
-import { Event } from './event.model';
+import { Event } from './event.pages';
 
 describe("Test for Event", ()=>{
 
