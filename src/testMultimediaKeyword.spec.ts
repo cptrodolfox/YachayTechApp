@@ -1,13 +1,17 @@
-describe('Tes for multimedia keyword', function() {
+import {Multimedia} from './multimedia.model';
+
+// valid keywords=['Fotos','Video','Audio']
+
+beforeEach(function() {
+    multimedia = new Multimedia();
+});
+describe("Tes for multimedia keyword", function() {
+
     it('passes if the expected keyword is an element in the array of valid keywords', function() {
-    	var keyword= 'Fotos';
-        expect(['Fotos','Video','Audio']).toContain(keyword);        
+        expect(multimedia.IsValidKeyword()).toBe(true);        
     });
     
     it('fails if the expected keyword in not in the array of valid keywprds', function() {
-        var keyword='Musica'
-        expect(['Fotos','Video','Audio']).not.toContain(keyword);
-
+        expect(multimedia.IsValidKeyword()).toBe(false); 
     });
 });
-
