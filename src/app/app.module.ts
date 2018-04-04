@@ -7,6 +7,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { BusSchedulePage } from '../pages/bus-schedule/bus-schedule';
+import { YachaytechProvider } from '../providers/yachaytech/yachaytech';
+import { SQLite } from '@ionic-native/sqlite';
 
 @NgModule({
   declarations: [
@@ -25,9 +27,11 @@ import { BusSchedulePage } from '../pages/bus-schedule/bus-schedule';
       BusSchedulePage
   ],
   providers: [
-    StatusBar,
-    SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+      StatusBar,
+      SplashScreen,
+      SQLite,
+      {provide: ErrorHandler, useClass: IonicErrorHandler},
+      YachaytechProvider
   ]
 })
 export class AppModule {}
