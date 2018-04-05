@@ -59,7 +59,6 @@ export class Entry{
         }
         return dayString;
     }
-
 }
 
 /**
@@ -123,6 +122,7 @@ export class Schedule {
 })
 export class BusSchedulePage {
     busSchedule: Entry[];
+    days: string[] = ["Monday", "Tuesday", "Wednesday", "Tuesday", "Friday", "Saturday", "Sunday"]; // For testing Purposes
 
     constructor(public navCtrl: NavController, public navParams: NavParams) {
     }

@@ -7,12 +7,13 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>bus-schedule</ion-title>
+      <ion-title>Bus Schedule</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
-<ion-content padding>
-
-</ion-content>
+<ion-slides loop="true" style="background-color: white">
+    <ion-slide *ngFor="let day of days">
+        <h1>{{day}}</h1>
+    </ion-slide>
+</ion-slides>

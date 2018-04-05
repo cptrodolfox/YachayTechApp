@@ -31,6 +31,4 @@ describe("Test for a whole Schedule", ()=>{
             expect(schedule.sunday).toEqual([]);
         });
     });
-
-
 });

@@ -6,9 +6,8 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
-</ion-content>
+<ion-slides loop="true" style="background-color: white">
+    <ion-slide *ngFor="let day of [1,2,3,4]">
+        <h1>{{day}}</h1>
+    </ion-slide>
+</ion-slides>
