@@ -1,14 +1,24 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Home
     </ion-title>
   </ion-navbar>
 </ion-header>
+<ion-content class="grid-basic-page">
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+                <button ion-button full outline (click)="moveToSettings()">
+                    {{ 'SETTINGS_PAGE_TITLE' | translate }}
+                </button>
+            </ion-col>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+            <ion-col>
+                <button ion-button full outline (click)="moveToBusSchedule()">
+                    {{ 'SCHEDULE_PAGE_TITLE' | translate }}
+                </button>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

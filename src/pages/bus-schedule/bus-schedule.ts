@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
+/**
+   I18n support
+ */
+import { TranslateService } from '@ngx-translate/core';
 
 /**
    Enum Type for days of the week
@@ -18,13 +22,13 @@ export enum Day {
 /**
    An entry of the schedule
    */
-export class Entry{
+export class Entry {
     day: Day; // Day of the week.
     location: string; // Starting location of the bus line.
     time: string; // Time in the format hh:mm of bus departure from location.
 
 
-    constructor(day:Day, location: string, time: string){
+    constructor(day: Day, location: string, time: string) {
         this.day = day;
         this.location = location;
         this.time = time;
@@ -32,29 +36,29 @@ export class Entry{
     /**
        Returns the day of the week of the Entry as a human readable string English
      */
-    getDayEn(){
+    getDayEn() {
         var dayString;
-        switch(this.day){
+        switch (this.day) {
             case Day.Mon:
-                dayString="Monday";
+                dayString = "Monday";
                 break;
             case Day.Tues:
-                dayString="Tuesday";
+                dayString = "Tuesday";
                 break;
             case Day.Wed:
-                dayString="Wednesday";
+                dayString = "Wednesday";
                 break;
             case Day.Thur:
-                dayString="Thursday";
+                dayString = "Thursday";
                 break;
             case Day.Fri:
-                dayString="Friday";
+                dayString = "Friday";
                 break;
             case Day.Sat:
-                dayString="Saturday";
+                dayString = "Saturday";
                 break;
             case Day.Sun:
-                dayString="Sunday";
+                dayString = "Sunday";
                 break;
         }
         return dayString;
@@ -71,7 +75,7 @@ export class Schedule {
     tuesday: Entry[] = [];
     wednesday: Entry[] = [];
     thursday: Entry[] = [];
-    friday:  Entry[] = [];
+    friday: Entry[] = [];
     saturday: Entry[] = [];
     sunday: Entry[] = [];
 
@@ -79,9 +83,9 @@ export class Schedule {
        When creating a schedule it receives a list of entries and then it separates the
        entries by day of the week.
      */
-    constructor(entries: Entry[]){
-        for(let entry of entries){
-            switch(entry.day){
+    constructor(entries: Entry[]) {
+        for (let entry of entries) {
+            switch (entry.day) {
                 case Day.Mon:
                     this.monday.push(entry);
                     break;
@@ -109,13 +113,6 @@ export class Schedule {
 }
 
 
-/**
- * Generated class for the BusSchedulePage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
 @IonicPage()
 @Component({
     selector: 'page-bus-schedule',
@@ -124,12 +121,12 @@ export class Schedule {
 export class BusSchedulePage {
     busSchedule: Entry[];
 
-    constructor(public navCtrl: NavController, public navParams: NavParams) {
+    constructor(public navCtrl: NavController, public navParams: NavParams, private translateService: TranslateService) {
     }
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad BusSchedulePage');
     }
 
-    getBusSchedule(){}
+    getBusSchedule() { }
 }
