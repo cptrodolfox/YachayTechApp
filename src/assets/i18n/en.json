@@ -1,5 +1,10 @@
 {
     "SCHEDULE_PAGE_TITLE":"Bus Schedule",
+    "SETTINGS_PAGE_TITLE":"Settings",
+    "NEWS_PAGE_TITLE":"News",
+    "EVENTS_PAGE_TITLE":"Events",
+    "MAP_PAGE_TITLE":"Map",
+    "MULTIMEDIA_PAGE_TITLE":"Multimedia Catalog",
     "MONDAY":"Monday",
     "TUESDAY":"Tuesday",
     "WEDNESDAY":"Wednesday",

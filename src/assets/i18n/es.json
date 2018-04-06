@@ -1,4 +1,10 @@
 {
+    "SCHEDULE_PAGE_TITLE":"Horario de bus",
+    "SETTINGS_PAGE_TITLE":"Ajustes",
+    "NEWS_PAGE_TITLE":"Noticias",
+    "EVENTS_PAGE_TITLE":"Eventos",
+    "MAP_PAGE_TITLE":"Mapa",
+    "MULTIMEDIA_PAGE_TITLE":"Cátalogo Virtual",
     "MONDAY":"Lunes",
     "TUESDAY":"Martes",
     "WEDNESDAY":"Miércoles",

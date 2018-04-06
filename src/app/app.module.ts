@@ -5,9 +5,20 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
+/**
+   Pages
+ */
 import { HomePage } from '../pages/home/home';
 import { BusSchedulePage } from '../pages/bus-schedule/bus-schedule';
+import { SettingsPage } from '../pages/settings/settings';
+/**
+   Data Provider
+ */
 import { YachaytechProvider } from '../providers/yachaytech/yachaytech';
+
+/**
+   Database Engine
+ */
 import { SQLite } from '@ionic-native/sqlite';
 
 /**
@@ -30,7 +41,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     declarations: [
         MyApp,
         HomePage,
-        BusSchedulePage
+        BusSchedulePage,
+        SettingsPage
     ],
     imports: [
         BrowserModule,
@@ -48,7 +60,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     entryComponents: [
         MyApp,
         HomePage,
-        BusSchedulePage
+        BusSchedulePage,
+        SettingsPage
     ],
     providers: [
         StatusBar,
