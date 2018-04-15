@@ -1,12 +1,15 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { TranslateService } from '@ngx-translate/core';
 
-/**
- * Generated class for the NewsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
+export class News{
+  title: String;
+  date: Date;
+  summary:  String;
+  full_text: String;
+  images: String[];
+}
+
 
 @IonicPage()
 @Component({
@@ -15,7 +18,8 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class NewsPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private translateService: TranslateService) {
+    translateService.use('en');
   }
 
   ionViewDidLoad() {
