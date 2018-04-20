@@ -11,6 +11,8 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { BusSchedulePage } from '../pages/bus-schedule/bus-schedule';
 import { SettingsPage } from '../pages/settings/settings';
+import { NewsPage } from '../pages/news/news';
+import { NewsItemPage } from '../pages/news-item/news-item';
 /**
    Data Provider
  */
@@ -29,11 +31,20 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
 
+/**
+   App Preferences
+ */
+import { AppPreferences } from '@ionic-native/app-preferences';
 
-/** export function createTranslateLoader(http: HttpClient) {
-return new TranslateHttpLoader(http, '.assets/i18n/', '.json');
-}*/
+/**
+    Social Sharing
+ */
+import { SocialSharing } from '@ionic-native/social-sharing';
 
+/**
+    Ionic Storage
+ */
+import { IonicStorageModule } from '@ionic/storage';
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http);
 }
@@ -42,7 +53,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         MyApp,
         HomePage,
         BusSchedulePage,
-        SettingsPage
+        SettingsPage,
+        NewsPage,
+        NewsItemPage
     ],
     imports: [
         BrowserModule,
@@ -54,21 +67,26 @@ export function HttpLoaderFactory(http: HttpClient) {
                 deps: [HttpClient]
             }
         }),
-        IonicModule.forRoot(MyApp)
+        IonicModule.forRoot(MyApp),
+        IonicStorageModule.forRoot(MyApp)
     ],
     bootstrap: [IonicApp],
     entryComponents: [
         MyApp,
         HomePage,
         BusSchedulePage,
-        SettingsPage
+        SettingsPage,
+        NewsPage,
+        NewsItemPage
     ],
     providers: [
         StatusBar,
         SplashScreen,
         SQLite,
         { provide: ErrorHandler, useClass: IonicErrorHandler },
-        YachaytechProvider
+        YachaytechProvider,
+        AppPreferences,
+        SocialSharing
     ]
 })
 export class AppModule { }

@@ -7,7 +7,7 @@ import { TranslateService } from '@ngx-translate/core';
  */
 import { SettingsPage } from '../settings/settings';
 import { BusSchedulePage } from '../bus-schedule/bus-schedule';
-
+import { NewsPage } from '../news/news';
 
 @Component({
     selector: 'page-home',
@@ -25,6 +25,10 @@ export class HomePage {
 
     moveToBusSchedule() {
         this.navCtrl.push(BusSchedulePage);
+    }
+
+    moveToNewsPage() {
+        this.navCtrl.push(NewsPage);
     }
 
 }

@@ -5,11 +5,15 @@
     "EVENTS_PAGE_TITLE":"Eventos",
     "MAP_PAGE_TITLE":"Mapa",
     "MULTIMEDIA_PAGE_TITLE":"Cátalogo Virtual",
+    "SETTINGS_LANGUAGE":"Lenguaje",
+    "LANGUAGE_ENGLISH": "Inglés",
+    "LANGUAGE_SPANISH": "Español",
     "MONDAY":"Lunes",
     "TUESDAY":"Martes",
     "WEDNESDAY":"Miércoles",
     "THURSDAY":"Jueves",
     "FRIDAY":"Viernes",
     "SATURDAY":"Sábado",
-    "SUNDAY":"Domingo"
+    "SUNDAY":"Domingo",
+    "NEWS_BUTTON_VIEW":"Ver"
 }
