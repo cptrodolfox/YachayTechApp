@@ -1,0 +1,16 @@
+<ion-header>
+    <ion-navbar>
+    </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <h2>{{news.title}}</h2>
+    <p>{{news.getDate()}}</p>
+    <img [src]="news.getFrontImage()">
+    <p>{{news.full_text}}</p>
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <ion-title>Footer</ion-title>
+    </ion-toolbar>
+</ion-footer>

@@ -5,11 +5,15 @@
     "EVENTS_PAGE_TITLE":"Events",
     "MAP_PAGE_TITLE":"Map",
     "MULTIMEDIA_PAGE_TITLE":"Multimedia Catalog",
+    "SETTINGS_LANGUAGE":"Language",
+    "LANGUAGE_ENGLISH": "English",
+    "LANGUAGE_SPANISH": "Spanish",
     "MONDAY":"Monday",
     "TUESDAY":"Tuesday",
     "WEDNESDAY":"Wednesday",
     "THURSDAY":"Thursday",
     "FRIDAY":"Friday",
     "SATURDAY":"Saturday",
-    "SUNDAY":"Sunday"
+    "SUNDAY":"Sunday",
+    "NEWS_BUTTON_VIEW":"View"
 }

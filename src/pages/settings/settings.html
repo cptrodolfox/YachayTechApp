@@ -12,7 +12,18 @@
 
 </ion-header>
 
-
-<ion-content padding>
-
+<ion-content>
+    <ion-list>
+        <ion-item>
+            <ion-label>{{ 'SETTINGS_LANGUAGE' | translate }}</ion-label>
+            <ion-select [(ngModel)]="language" (ionChange)="changeLanguageSetting(language)" interface="action-sheet">
+                <ion-option value="en">
+                    {{ 'LANGUAGE_ENGLISH' | translate }}
+                </ion-option>
+                <ion-option value="es">
+                    {{ 'LANGUAGE_SPANISH' | translate }}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+    </ion-list>
 </ion-content>
