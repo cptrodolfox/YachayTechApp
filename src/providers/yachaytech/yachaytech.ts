@@ -1,17 +1,21 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
-/*
-  Generated class for the YachaytechProvider provider.
-
-  See https://angular.io/guide/dependency-injection for more info on providers
-  and Angular DI.
+import { Storage } from '@ionic/storage';
+import { News } from '../../pages/news/news';
+/**
+*   Key/Value Storage Constants
 */
+const NEWS_KEY='news';
+const EVENTS_KEY='events';
+
+
+// TODO Use Ionic Storage instead of SQLite directly for better support
 @Injectable()
 export class YachaytechProvider {
     static readonly db_name = 'yachaytechapp_db';
     static readonly db_location = 'default';
-    constructor(public http: HttpClient, private sqlite: SQLite) {
+    constructor(public http: HttpClient, private sqlite: SQLite, public storage: Storage) {
         console.log('Hello YachaytechProvider Provider');
     }
 
@@ -82,4 +86,22 @@ export class YachaytechProvider {
 
     }
 
+    getAllNews(){
+        return this.storage.get(NEWS_KEY);
+    }
+
+    storeNews(news: News[]){
+        this.getAllNews().then(res => {
+            if(res){
+                res.push(news);
+                return this.storage.set(NEWS_KEY, [res, news]);
+            }else{
+                return this.storage.set(NEWS_KEY, news);
+            }
+        });
+    }
+
+    removeAllNews(){
+        return this.storage.remove(NEWS_KEY);
+    }
 }

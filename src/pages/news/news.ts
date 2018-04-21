@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
 import { NewsItemPage } from '../news-item/news-item';
+import { YachaytechProvider } from '../../providers/yachaytech/yachaytech';
 
 // TODO Social Sharing capabilities.
 
@@ -12,14 +13,34 @@ import { NewsItemPage } from '../news-item/news-item';
 })
 export class NewsPage {
     public news: News[]=[];
-
+    loading : any;
     constructor(public navCtrl: NavController, 
                 public navParams: NavParams, 
-                private translateService: TranslateService) {
-        translateService.use('en');
-        this.news.push(new News("Noticia 1", new Date(), "El resumen de la noticia 1", "La noticia 1 es una noticia de prueba", ["assets/imgs/news.jpeg"]));
-        this.news.push(new News("Noticia 2", new Date(), "El resumen de la noticia 2", "La noticia 2 es una noticia de prueba", ["assets/imgs/news.jpeg"]));
-        this.news.push(new News("Noticia 3", new Date(), "El resumen de la noticia 3", "La noticia 3 es una noticia de prueba", ["assets/imgs/news.jpeg"]));
+                private translateService: TranslateService,
+                public yachaytechProvider: YachaytechProvider,
+                private loadingController: LoadingController) {
+
+        this.loading  = this.loadingController.create({
+            content: 'Loading news please wait...'
+        });
+        this.loading.present();
+        this.news.push(new News("Noticia 1", 
+                                new Date(), 
+                                "El resumen de la noticia 1", 
+                                "La noticia 1 es una noticia de prueba", 
+                                ["assets/imgs/news.jpeg"]));
+        this.news.push(new News("Noticia 2", 
+                                new Date(), 
+                                "El resumen de la noticia 2", 
+                                "La noticia 2 es una noticia de prueba", 
+                                ["assets/imgs/news.jpeg"]));
+        this.news.push(new News("Noticia 3", 
+                                new Date(), 
+                                "El resumen de la noticia 3", 
+                                "La noticia 3 es una noticia de prueba", 
+                                ["assets/imgs/news.jpeg"]));
+        this.yachaytechProvider.removeAllNews();
+        this.loading.dismiss();   
     }
 
     ionViewDidLoad(){

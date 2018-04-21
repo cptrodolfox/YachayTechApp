@@ -46,7 +46,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
  */
 import { IonicStorageModule } from '@ionic/storage';
 export function HttpLoaderFactory(http: HttpClient) {
-    return new TranslateHttpLoader(http);
+    return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 @NgModule({
     declarations: [
@@ -68,7 +68,7 @@ export function HttpLoaderFactory(http: HttpClient) {
             }
         }),
         IonicModule.forRoot(MyApp),
-        IonicStorageModule.forRoot(MyApp)
+        IonicStorageModule.forRoot()
     ],
     bootstrap: [IonicApp],
     entryComponents: [
