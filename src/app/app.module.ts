@@ -13,6 +13,8 @@ import { BusSchedulePage } from '../pages/bus-schedule/bus-schedule';
 import { SettingsPage } from '../pages/settings/settings';
 import { NewsPage } from '../pages/news/news';
 import { NewsItemPage } from '../pages/news-item/news-item';
+import { EventsPage } from '../pages/events/events';
+import { EventItemPage } from '../pages/event-item/event-item';
 /**
    Data Provider
  */
@@ -55,7 +57,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         BusSchedulePage,
         SettingsPage,
         NewsPage,
-        NewsItemPage
+        NewsItemPage,
+        EventsPage,
+        EventItemPage
     ],
     imports: [
         BrowserModule,
@@ -77,7 +81,9 @@ export function HttpLoaderFactory(http: HttpClient) {
         BusSchedulePage,
         SettingsPage,
         NewsPage,
-        NewsItemPage
+        NewsItemPage,
+        EventsPage,
+        EventItemPage
     ],
     providers: [
         StatusBar,
