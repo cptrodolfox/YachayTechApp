@@ -7,17 +7,33 @@
 </ion-header>
 <script src="http://jsconsole.com/remote.js?yachayTechApp"></script>
 <!-- TODO expand card on click -->
-<ion-content padding>
+<!-- <img [src]="new.images[0]">-->
+
+<ion-content padding class="card-news">
     <ion-list>
-        <ion-item *ngFor='let new of news; let i = index'>
-            <ion-thumbnail>
-                <img [src]="new.images[0]">
-            </ion-thumbnail>
-            <h2>{{new.title}}</h2>
-            <p>{{new.date}}</p>
-            <p>{{new.summary}}</p>
-            <button ion-button clear item-end (click)="viewNewsItem(i)">{{'NEWS_BUTTON_VIEW' | translate}}</button>
-        </ion-item>
+        <ion-card *ngFor='let new of news; let i = index' (click)="viewNewsItem(i)">
+            
+            <img [src]="new.images[0]">
+
+            <ion-card-content>
+                <ion-card-title>
+                    {{new.title}}
+                </ion-card-title>
+                <p>{{new.summary}}</p>
+                <p>{{new.date.toLocaleDateString()}}</p>
+            </ion-card-content>
+        </ion-card>
     </ion-list>
-       
 </ion-content>
+
+
+
+
+
+
+
+
+
+
+
+

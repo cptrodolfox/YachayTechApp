@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { ErrorHandler, NgModule } from '@angular/core';
+import { ErrorHandler, NgModule, Inject } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
-import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
@@ -50,6 +49,39 @@ import { IonicStorageModule } from '@ionic/storage';
 export function HttpLoaderFactory(http: HttpClient) {
     return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
+
+/**
+ *  Custom ErrorHandler
+ */
+import { AlertController } from 'ionic-angular';
+import { SplashScreen } from '@ionic-native/splash-screen';
+export class ProductionErrorHandler implements ErrorHandler {
+    constructor (
+        @Inject (AlertController) private alerts: AlertController,
+        @Inject (SplashScreen) public splashScreen: SplashScreen
+    ){}
+
+    async handleError(error) {
+        const alert = this.alerts.create({
+            title: 'An Error Has Ocurred',
+            subTitle: 'Unfortunately, the app needs to be restarted',
+            enableBackdropDismiss: false,
+            buttons: [
+                {
+                    text: 'Restart',
+                    handler: () => {
+                        this.splashScreen.show();
+                        window.location.reload();
+                    }
+                }
+            ]
+        });
+        alert.present();
+    }
+}
+const production = false;
+const ERROR_HANDLER = production ? ProductionErrorHandler : IonicErrorHandler;
+
 @NgModule({
     declarations: [
         MyApp,
@@ -89,7 +121,7 @@ export function HttpLoaderFactory(http: HttpClient) {
         StatusBar,
         SplashScreen,
         SQLite,
-        { provide: ErrorHandler, useClass: IonicErrorHandler },
+        { provide: ErrorHandler, useClass: ERROR_HANDLER },
         YachaytechProvider,
         AppPreferences,
         SocialSharing

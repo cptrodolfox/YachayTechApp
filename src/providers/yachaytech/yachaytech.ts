@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 import { SQLite, SQLiteObject } from '@ionic-native/sqlite';
 import { Storage } from '@ionic/storage';
 import { News } from '../../pages/news/news';
+import { AlertController } from 'ionic-angular';
+import { Network } from '@ionic-native/network';
 /**
 *   Key/Value Storage Constants
 */
@@ -15,7 +17,9 @@ const EVENTS_KEY='events';
 export class YachaytechProvider {
     static readonly db_name = 'yachaytechapp_db';
     static readonly db_location = 'default';
-    constructor(public http: HttpClient, private sqlite: SQLite, public storage: Storage) {
+    constructor(public http: HttpClient, 
+                private sqlite: SQLite, 
+                public storage: Storage) {
         console.log('Hello YachaytechProvider Provider');
     }
 

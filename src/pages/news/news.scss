@@ -1,3 +1,22 @@
 page-news {
 
 }
+
+.card-news{
+    ion-card {
+        position: relative;
+        text-align: center;
+    }
+    .news-title {
+        font-size: 1.5em;
+        width: 80%;
+        color: #000;
+        text-align:left;
+    }
+
+    .news-summary {
+        font-size: 1.0em;
+        width: 100%;
+        color: #000;
+    }
+}

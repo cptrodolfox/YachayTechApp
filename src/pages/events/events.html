@@ -3,19 +3,26 @@
   <ion-navbar>
       <ion-title>{{'EVENTS_PAGE_TITLE'| translate}}</ion-title>
   </ion-navbar>
-
 </ion-header>
+
 
 
 <ion-content padding>
     <ion-list>
-        <ion-item *ngFor="let event of events, let i=index">
-            <h2>{{ event.title }}</h2>
-            <p>Start date: {{ event.start_date }}</p>
-            <p>End date: {{ event.end_date }}</p>
-            <p>Description: {{ event.description }}</p>
-            <p>Published date: {{ event.published_date }}</p>
-        </ion-item>
+        <ion-card *ngFor="let event of events, let i=index">
+            <ion-card-content>
+                <ion-card-title alignc>
+                    {{event.title}}
+                </ion-card-title>
+                <p>Start date: {{ event.start_date.toLocaleDateString() }}</p>
+                <p>End date: {{ event.end_date.toLocaleDateString() }}</p>
+                <p>Description: {{ event.description }}</p>
+                <p>Published date: {{ event.published_date.toLocaleDateString() }}</p>
+ 
+            </ion-card-content>
+        
+        </ion-card>
     </ion-list>
-
+    
 </ion-content>
+

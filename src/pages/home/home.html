@@ -1,5 +1,5 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar >
     <ion-title>
       Home
     </ion-title>
@@ -9,23 +9,22 @@
     <ion-grid>
         <ion-row>
             <ion-col>
-                <button ion-button full outline (click)="moveToNewsPage()">
-                    {{ 'NEWS_PAGE_TITLE' | translate }}
-                </button>
+                <ion-icon name="paper" (click)="moveToNewsPage()"></ion-icon>
+                <p>{{'NEWS_PAGE_TITLE' | translate}}</p>
             </ion-col>
 
             <ion-col>
-                <button ion-button full outline (click)="moveToEventsPage()">
-                    {{ 'EVENTS_PAGE_TITLE' | translate }}
-                </button>
+                <ion-icon name="calendar" (click)="moveToEventsPage()"></ion-icon>
+                <p>{{'EVENTS_PAGE_TITLE' | translate}}</p>
             </ion-col>
         </ion-row>
 
         <ion-row>
             <ion-col>
-                <button ion-button full outline (click)="moveToSettings()">
-                    {{ 'SETTINGS_PAGE_TITLE' | translate }}
-                </button>
+                <ion-icon name="settings" (click)="moveToSettings()"></ion-icon>
+                <p>{{'SETTINGS_PAGE_TITLE'|translate}}</p>
+            </ion-col>
+            <ion-col>
             </ion-col>
         </ion-row>
     </ion-grid>

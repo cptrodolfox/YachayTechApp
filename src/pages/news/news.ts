@@ -3,9 +3,9 @@ import { IonicPage, NavController, NavParams, LoadingController } from 'ionic-an
 import { TranslateService } from '@ngx-translate/core';
 import { NewsItemPage } from '../news-item/news-item';
 import { YachaytechProvider } from '../../providers/yachaytech/yachaytech';
-
+import { AlertController } from 'ionic-angular';
+import { Network } from '@ionic-native/network';
 // TODO Social Sharing capabilities.
-
 @IonicPage()
 @Component({
   selector: 'page-news',
@@ -18,7 +18,8 @@ export class NewsPage {
                 public navParams: NavParams, 
                 private translateService: TranslateService,
                 public yachaytechProvider: YachaytechProvider,
-                private loadingController: LoadingController) {
+                private loadingController: LoadingController,
+                private alerts: AlertController) {
 
         this.loading  = this.loadingController.create({
             content: 'Loading news please wait...'

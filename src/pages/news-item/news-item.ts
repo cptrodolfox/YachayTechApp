@@ -3,6 +3,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { News } from '../news/news';
 import { SocialSharing } from '@ionic-native/social-sharing';
 
+/**
+*   Pages
+* */
+import { HomePage } from '../home/home';
+
 @IonicPage()
 @Component({
   selector: 'page-news-item',
@@ -16,6 +21,10 @@ export class NewsItemPage {
 
     ionViewDidLoad() {
         console.log('ionViewDidLoad NewsItemPage');
+    }
+
+    moveToHome(){
+        this.navCtrl.popToRoot();
     }
 
 }

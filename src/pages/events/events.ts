@@ -12,28 +12,28 @@ export class EventsPage {
     events: Event[]=[];
 
     constructor(public navCtrl: NavController, public navParams: NavParams, private translateService: TranslateService) {
-     
+         
         this.events.push(new Event("Evento 1",
-                                  Date(),
-                                  Date(),
+                                  new Date(),
+                                  new Date(),
                                   "Este es el evento 1",
                                   [],
-                                  Date())); 
+                                  new Date())); 
    
         this.events.push(new Event("Evento 2",
-                                  Date(),
-                                  Date(),
+                                  new Date(),
+                                  new Date(),
                                   "Este es el evento 2",
                                   [],
-                                  Date())); 
+                                  new Date())); 
     
 
         this.events.push(new Event("Evento 3",
-                                  Date(),
-                                  Date(),
+                                  new Date(),
+                                  new Date(),
                                   "Este es el evento 3",
                                   [],
-                                  Date())); 
+                                  new Date())); 
     
    
     }
